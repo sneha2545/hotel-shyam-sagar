@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="80" height="80">
+  <defs>
+    <linearGradient id="disc2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1c1c18"/>
+      <stop offset="100%" stop-color="#0a0a08"/>
+    </linearGradient>
+    <linearGradient id="sun2" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e5c188"/>
+      <stop offset="100%" stop-color="#c5a46d"/>
+    </linearGradient>
+  </defs>
+  <circle cx="40" cy="40" r="38" fill="url(#disc2)" stroke="#c5a46d" stroke-width="1.2"/>
+  <circle cx="40" cy="36" r="10" fill="url(#sun2)"/>
+  <g stroke="#c5a46d" stroke-width="1.6" stroke-linecap="round">
+    <line x1="40" y1="18" x2="40" y2="22"/>
+    <line x1="56" y1="36" x2="60" y2="36"/>
+    <line x1="50" y1="26" x2="53" y2="23"/>
+    <line x1="30" y1="26" x2="27" y2="23"/>
+  </g>
+  <g stroke="#c5a46d" stroke-width="1.8" fill="none" stroke-linecap="round">
+    <path d="M8 56 Q18 50, 28 56 T48 56 T68 56 T76 58" opacity="0.95"/>
+    <path d="M8 64 Q18 58, 28 64 T48 64 T68 64 T76 66" opacity="0.75"/>
+  </g>
+</svg>

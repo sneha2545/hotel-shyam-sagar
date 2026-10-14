@@ -1,0 +1,295 @@
+/* ==========================================================================
+   pages.css — Page-specific styles, magazine layouts, narrative blocks
+   ========================================================================== */
+
+/* ---------- Story timeline ---------- */
+.story-intro {
+  max-width: 720px;
+  margin-inline: auto;
+  text-align: center;
+}
+.story-intro h2 { color: var(--primary); margin-bottom: var(--space-md); }
+.story-intro p { color: var(--on-surface-variant); font-size: var(--fs-body-lg); line-height: var(--lh-body-lg); }
+
+/* ---------- About: founder block ---------- */
+.founder {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .founder { grid-template-columns: 5fr 7fr; }
+}
+.founder .portrait {
+  aspect-ratio: 4 / 5;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  background: var(--surface-container-high);
+  box-shadow: var(--shadow-2);
+}
+.founder .portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ---------- Skyfall: menu list ---------- */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+.menu-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: var(--space-md);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px dashed color-mix(in srgb, var(--champagne) 30%, transparent);
+}
+.menu-item:last-child { border-bottom: none; }
+.menu-item .name {
+  font-family: var(--font-display);
+  font-size: var(--fs-title-lg);
+  font-weight: 600;
+  color: var(--on-primary);
+  margin-bottom: 4px;
+}
+.menu-item .desc {
+  color: color-mix(in srgb, var(--on-primary) 65%, transparent);
+  font-size: var(--fs-body-sm);
+  line-height: var(--lh-body-sm);
+}
+.menu-item .price {
+  font-family: var(--font-display);
+  font-size: var(--fs-title-lg);
+  font-weight: 600;
+  color: var(--secondary-fixed);
+}
+
+/* ---------- Banquets: capacity spec ---------- */
+.spec-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+@media (min-width: 768px) { .spec-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .spec-grid { grid-template-columns: repeat(4, 1fr); } }
+
+.spec-card {
+  background: var(--surface-container);
+  padding: var(--space-md);
+  border-radius: var(--r-xl);
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+.spec-card .label {
+  font-family: var(--font-body);
+  font-size: var(--fs-label-md);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label-md);
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+.spec-card .value {
+  font-family: var(--font-display);
+  font-size: var(--fs-headline-md);
+  font-weight: 600;
+  color: var(--primary);
+}
+.spec-card .note {
+  color: var(--on-surface-variant);
+  font-size: var(--fs-body-sm);
+}
+
+/* ---------- Gallery: uniform aligned grid ---------- */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+@media (min-width: 640px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 1024px) {
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: var(--r-xl);
+  background: var(--surface-container-high);
+  box-shadow: var(--shadow-1);
+  cursor: pointer;
+  margin: 0;
+}
+.gallery-item img,
+.gallery-item .bg-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.gallery-item:hover img,
+.gallery-item:hover .bg-img { transform: scale(1.08); }
+
+/* Remove the irregular tall/wide variants to keep grid uniform */
+.gallery-item.tall,
+.gallery-item.wide { aspect-ratio: 1 / 1; grid-row: auto; }
+
+/* ---------- Experiences: editorial split ---------- */
+.exp-block {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+  align-items: center;
+}
+@media (min-width: 1024px) {
+  .exp-block { grid-template-columns: 7fr 5fr; }
+}
+.exp-block.reverse { grid-template-columns: 1fr; }
+@media (min-width: 1024px) {
+  .exp-block.reverse { grid-template-columns: 5fr 7fr; }
+}
+.exp-block .text-side { display: flex; flex-direction: column; gap: var(--space-md); order: 2; }
+.exp-block .img-side { order: 1; }
+.exp-block.reverse .text-side { order: 1; }
+.exp-block.reverse .img-side { order: 2; }
+.exp-block .img-wrap {
+  aspect-ratio: 16 / 10;
+  border-radius: var(--r-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-2);
+}
+.exp-block .img-wrap img,
+.exp-block .img-wrap .bg-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-zoom);
+}
+.exp-block:hover .img-wrap img,
+.exp-block:hover .img-wrap .bg-img { transform: scale(1.05); }
+.exp-block h3 { color: var(--primary); }
+
+/* ---------- Skyfall hero ---------- */
+.skyfall-hero {
+  position: relative;
+  background: var(--primary);
+  color: var(--on-primary);
+  padding-block: 6rem;
+  overflow: hidden;
+}
+.skyfall-hero::after {
+  content: "";
+  position: absolute;
+  bottom: -12rem; right: -8rem;
+  width: 32rem; height: 32rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--secondary-fixed) 5%, transparent);
+  filter: blur(80px);
+  pointer-events: none;
+}
+.skyfall-hero h2 { color: var(--on-primary); }
+.skyfall-hero h2 .accent { font-style: italic; font-weight: 300; color: var(--secondary-fixed); }
+
+/* ---------- Offers hero ---------- */
+.offers-hero {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-container) 50%, var(--primary) 100%);
+  color: var(--on-primary);
+  padding-block: 6rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.offers-hero::before {
+  content: "";
+  position: absolute;
+  top: -4rem; left: -4rem;
+  width: 16rem; height: 16rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--secondary-fixed) 10%, transparent);
+  filter: blur(60px);
+}
+.offers-hero h1, .offers-hero h2 { color: var(--on-primary); }
+.offers-hero .accent { color: var(--secondary-fixed); font-style: italic; }
+
+/* ---------- Contact: two-column ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gutter);
+}
+@media (min-width: 1024px) {
+  .contact-grid { grid-template-columns: 5fr 7fr; }
+}
+
+.contact-card {
+  background: var(--surface-container);
+  border-radius: var(--r-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-1);
+  margin-bottom: var(--space-md);
+}
+.contact-card .label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-title-lg);
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: var(--space-sm);
+}
+.contact-card .label .material-symbols-outlined { color: var(--secondary); font-size: 24px; }
+
+.contact-form-card {
+  background: var(--surface-container-lowest);
+  border-radius: var(--r-xl);
+  padding: var(--space-lg);
+  box-shadow: var(--shadow-2);
+  border: 1px solid color-mix(in srgb, var(--champagne) 30%, transparent);
+}
+
+/* ---------- Scroll indicator ---------- */
+.scroll-cue {
+  display: none;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-body);
+  font-size: var(--fs-label-md);
+  font-weight: 600;
+  letter-spacing: var(--tracking-label-md);
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--on-primary) 70%, transparent);
+  margin-top: var(--space-xl);
+}
+@media (min-width: 1024px) {
+  .scroll-cue { display: inline-flex; }
+}
+.scroll-cue .material-symbols-outlined {
+  color: var(--secondary-fixed);
+  animation: bounce 2s ease-in-out infinite;
+}
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}

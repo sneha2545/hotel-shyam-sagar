@@ -1,0 +1,164 @@
+/* ==========================================================================
+   tokens.css — Heritage Sanctuary design tokens (Hotel Shyam Sagar Roorkee)
+   Palette: deep chocolate + rich cocoa + mocha + cream + champagne gold.
+   Typography: Cormorant Garamond serif (display) + Manrope (body).
+   ========================================================================== */
+
+:root {
+  /* ---------- Colors — Heritage Sanctuary (brown + cream) ---------- */
+  /* Surface system — warm off-white ivory canvas */
+  --surface: #f8f4ec;
+  --surface-dim: #d4c8ae;
+  --surface-bright: #ffffff;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f1ebdf;
+  --surface-container: #eee5d7;
+  --surface-container-high: #e5d9c4;
+  --surface-container-highest: #d4c8ae;
+  --surface-variant: #e5d9c4;
+  --background: #f8f4ec;
+  --on-background: #2b211c;
+  --on-surface: #2b211c;
+  --on-surface-variant: #5a3828;
+  --inverse-surface: #2b211c;
+  --inverse-on-surface: #f8f4ec;
+  --surface-tint: #5a3828;
+  --outline: #795744;
+  --outline-variant: #b7a895;
+
+  /* Primary — Deep Chocolate */
+  --primary: #3b241b;
+  --primary-deep: #5a3828;
+  --on-primary: #f8f4ec;
+  --primary-container: #5a3828;
+  --on-primary-container: #c6a46a;
+  --primary-fixed: #c6a46a;
+  --primary-fixed-dim: #b8956b;
+  --on-primary-fixed: #2b211c;
+  --on-primary-fixed-variant: #5a3828;
+  --inverse-primary: #c6a46a;
+
+  /* Secondary — Champagne Gold */
+  --secondary: #c6a46a;
+  --secondary-fixed: #c6a46a;
+  --secondary-fixed-dim: #b8956b;
+  --secondary-soft: #eee5d7;
+  --on-secondary: #2b211c;
+  --on-secondary-fixed: #2b211c;
+  --on-secondary-fixed-variant: #5a3828;
+  --on-secondary-container: #b8956b;
+  --gold: #c6a46a;
+  --gold-soft: rgba(198, 164, 106, 0.2);
+  --gold-border: rgba(198, 164, 106, 0.35);
+
+  /* Tertiary — Mocha Brown */
+  --tertiary: #795744;
+  --tertiary-deep: #3b241b;
+  --tertiary-container: #3b241b;
+  --on-tertiary: #f8f4ec;
+  --on-tertiary-container: #b7a895;
+  --on-tertiary-fixed: #f8f4ec;
+  --on-tertiary-fixed-variant: #795744;
+
+  /* Brand aliases */
+  --champagne: #c6a46a;
+  --ivory: #f8f4ec;
+  --cream: #eee5d7;
+  --forest: #3b241b;
+  --forest-darker: #2b211c;
+  --champagne-bright: #c6a46a;
+  --teak: #795744;
+  --charcoal: #2b211c;
+
+  /* Dark text / espresso */
+  --espresso: #3b241b;
+  --ink: #2b211c;
+  --chocolate-deep: #2b211c;
+
+  /* Error */
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  /* ---------- Typography — Cormorant Garamond (display) + Manrope (body) ---------- */
+  --font-display: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Manrope", "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --fs-display-hero: 76px;
+  --fs-display-hero-mobile: 52px;
+  --fs-display-lg: 76px;
+  --fs-headline-xl: 44px;
+  --fs-headline-xl-mobile: 32px;
+  --fs-headline-lg: 34px;
+  --fs-headline-md: 26px;
+  --fs-headline-sm: 22px;
+  --fs-body-lg: 18px;
+  --fs-body-md: 15px;
+  --fs-body-sm: 13px;
+  --fs-label-caps: 11px;
+  --fs-label-input: 14px;
+  --fs-label-sm: 10px;
+
+  --lh-display-hero: 84px;
+  --lh-display-hero-mobile: 60px;
+  --lh-display-lg: 84px;
+  --lh-headline-xl: 52px;
+  --lh-headline-xl-mobile: 38px;
+  --lh-headline-lg: 42px;
+  --lh-headline-md: 34px;
+  --lh-headline-sm: 30px;
+  --lh-body-lg: 30px;
+  --lh-body-md: 26px;
+  --lh-body-sm: 20px;
+  --lh-label-caps: 16px;
+  --lh-label-input: 20px;
+  --lh-label-sm: 14px;
+
+  --tracking-display: -0.01em;
+  --tracking-headline: -0.005em;
+  --tracking-caps: 0.18em;
+  --tracking-label: 0.02em;
+
+  /* ---------- Spacing ---------- */
+  --gutter: 2rem;
+  --gutter-mobile: 1rem;
+  --margin: 4rem;
+  --margin-mobile: 1.5rem;
+  --space-xs: 0.375rem;
+  --space-sm: 0.75rem;
+  --space-md: 1.25rem;
+  --space-lg: 2.25rem;
+  --space-xl: 3.5rem;
+
+  /* ---------- Radii ---------- */
+  --r-sm: 0;
+  --r-default: 0;
+  --r-md: 0;
+  --r-lg: 0;
+  --r-xl: 0;
+  --r-full: 9999px;
+
+  /* ---------- Layout ---------- */
+  --container: 1360px;
+  --container-wide: 1440px;
+  --header-h: 72px;
+  --topbar-h: 0px;
+
+  /* ---------- Shadows ---------- */
+  --shadow-1: 0 1px 4px rgba(43, 33, 28, 0.06);
+  --shadow-2: 0 12px 36px -8px rgba(43, 33, 28, 0.08);
+  --shadow-3: 0 24px 56px -12px rgba(43, 33, 28, 0.14);
+  --shadow-modal: 0 32px 64px -16px rgba(43, 33, 28, 0.25);
+
+  /* ---------- Borders ---------- */
+  --border-hairline: 1px solid var(--gold-soft);
+  --border-gold: 1px solid var(--gold);
+  --border-espresso: 1px solid var(--espresso);
+
+  /* ---------- Transitions ---------- */
+  --t-fast: 180ms ease;
+  --t-base: 300ms ease;
+  --t-slow: 600ms ease;
+  --t-zoom: 700ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
